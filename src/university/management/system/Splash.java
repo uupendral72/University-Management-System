@@ -27,9 +27,7 @@ public class Splash extends JFrame implements Runnable
               Thread.sleep(10);
           }
           catch(Exception e)
-          {
-              
-          }
+          {}
         }
     }
         public void run()
@@ -40,9 +38,7 @@ public class Splash extends JFrame implements Runnable
                 setVisible(false);
             }
             catch(Exception e)
-            {
-                
-            }
+            { }
         }
     
     public static void main(String[] args) 
