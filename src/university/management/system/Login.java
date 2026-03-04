@@ -3,6 +3,7 @@ package university.management.system;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 
 
 public class Login extends JFrame implements ActionListener
@@ -62,7 +63,25 @@ public class Login extends JFrame implements ActionListener
     {
         if(ae.getSource() == login)
         {
-            
+           String username = tfusername.getText();
+           String password = tfpassword.getText();
+           
+           String query = "select * from login where username='"+username+"' and password='"+password+"'";
+           try
+           {
+              DatabaseConnection con = new DatabaseConnection();
+              ResultSet rs = con.stm.executeQuery(query);
+              
+              if(rs.next())
+              {
+                  setVisible(false);
+                  new Project();
+              }
+           }
+           catch(Exception e)
+           {
+               e.printStackTrace();
+           }
         }
         else if(ae.getSource() == cancel)
         {
