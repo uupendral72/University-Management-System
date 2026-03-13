@@ -94,7 +94,7 @@ public class StudentLeave extends JFrame implements ActionListener {
             try {
                 DatabaseConnection c = new DatabaseConnection();
                 c.stm.executeUpdate(query);
-                JOptionPane.showMessageDialog(null, "Leave Confirmed");
+                JOptionPane.showMessageDialog(null, "Leave Confirmed ✅");
                 setVisible(false);
             } catch (Exception e) {
                 e.printStackTrace();
